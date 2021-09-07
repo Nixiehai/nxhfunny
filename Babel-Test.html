@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="input_1">
+    <span id="span_1"></span>
+    <script>
+        var obj = {};
+        Object.defineProperty(obj, 'test', {
+            set: (newVal) => {
+                document.getElementById('input_1').value = newVal;
+                document.getElementById('span_1').innerHTML = newVal;
+            }
+        });
+        document.addEventListener('keyup', (e) => {
+            obj.test = e.target.value;
+        })
+    </script>
+    <!-- <form id='form' name="form1" method="GET">
+        <input type="text" id='textInput' name="username">
+        <p id='username' data-usn="usn"></p>
+    </form>
+    <script>
+        let textInput = document.querySelector('#textInput');
+        let username = document.querySelector('#username');
+        let usn = document.querySelector('[usn]');
+        textInput.addEventListener('keyup', (e) => {
+            console.log(e.target.value)
+            let userInne = username.innerHTML;
+            // let textInne = textInput.innerHTML;
+            // let textValue = textInput.value;
+
+            console.log(`表单数据：${textInput.value}`);
+            // username.innerHTML = e.target.value;
+            // textInput.innerHTML = usn.getAttribute('data-usn');
+            username.innerHTML = textInput.value = e.target.value;
+
+            // textInput.innerHTML = e.target.value;
+        })
+    </script> -->
+    <!-- <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> -->
+    <!-- <script>
+    // import {MAP} from './ddate.js'
+        // const getMessage = () => "Hello World";
+        // document.getElementById('root').innerHTML = getMessage();
+    //    console.log([1, 2, 3].map(n => n + 1));
+    //    const fn = () => 1;
+    //    console.log(fn())
+    // MAP();
+    // type="text/babel" type="module"
+   </script> -->
+</body>
+
+</html>

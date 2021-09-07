@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blob</title>
+</head>
+
+<body>
+    <script>
+        let link = document.createElement('a');
+        link.download = 'hello.txt';
+        let blob = new Blob(['Hello,world!'], { type: 'text/plain' });
+        link.href = URL.createObjectURL(blob); //介意内存
+        console.log(`blob：${link.href}`)
+        let reader = new FileReader();  //不介意内存
+        reader.readAsDataURL(blob)
+        link.href = reader.result
+        console.log(`data-url：${link.href}`)
+        link.click();
+        URL.revokeObjectURL(link.href);
+    </script>
+</body>
+
+</html>

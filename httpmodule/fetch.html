@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetch获取nodejs服务端消息</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <button id="btn">获取</button>
+</body>
+<script>
+    let btn = document.querySelector('#btn');
+    let output = document.querySelector('#root');
+    btn.addEventListener('click', function () {
+        fetch('http://127.0.0.1:8080')
+            .then(response => {
+                response.text();
+                output.innerHTML = response.text();
+            })
+    })
+</script>
+
+</html>
