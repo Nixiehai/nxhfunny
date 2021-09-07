@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>module</title>
+</head>
+
+<body>
+    <div id="date"></div>
+    <!-- <button class="sbtn">停止</button>
+    <button class="bbtn">开始</button> -->
+    <script type="module">
+        import { showDate, months, Animals } from './ddate.js'
+
+        showDate();
+
+        months();
+
+        const cat = new Animals('小米', 3);
+        cat.getAnimal();
+        cat.setAnimal('小莫', 4.5)
+        cat.getAnimal();
+    </script>
+</body>
+
+</html>

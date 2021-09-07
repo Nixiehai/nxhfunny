@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动态时间</title>
+
+</head>
+
+<body>
+    <script>
+        export function Dates() {
+            setInterval(() => {
+                let dates = new Date();
+                let year = dates.getFullYear();
+                let month = dates.getMonth() + 1;
+                let day = dates.getDate();
+                let hour = dates.getHours();
+                let minute = dates.getMinutes();
+                let second = dates.getSeconds();
+                document.querySelector('#root').innerHTML = (`${year}年${month}月${day}日${hour}時${minute}分${second}秒`);
+            }, 1000);
+        }
+
+
+    </script>
+    <div id="root"></div>
+
+</body>
+
+</html>

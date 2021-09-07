@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select</title>
+</head>
+
+<body>
+    <select id="select">
+        <option value="一" selected>一</option>
+        <option value="二">二</option>
+        <option value="三">三</option>
+        <option value="四">四</option>
+        <option value="五">五</option>
+    </select>
+    <script>
+        let select = document.querySelector('#select');
+        let output = document.createElement('output');
+
+        output.style.margin = '0 auto';
+        output.style.color = 'white';
+        output.style.background = 'pink';
+        output.style.fontSize = '18px';
+        output.style.width = '70px';
+        output.style.height = '40px';
+        output.style.textAlign = 'center'
+        output.style.lineHeight = '40px';
+        output.style.display = 'inline-block';
+        document.body.append(output);
+
+        select.addEventListener('change', (e) => {
+            let option = document.querySelector('#select option');
+
+
+            console.log(`选项：${e.target.value}`);
+            output.innerHTML = e.target.value;
+            console.log(`显示的数据：${output.value}`);
+        })
+    </script>
+</body>
+
+</html>

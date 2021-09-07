@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File</title>
+</head>
+
+<body>
+    <input type="file" multiple>
+    <p></p>
+    <script>
+
+        function showFile(input) {
+            let files = input.files;
+            let output = document.createElement('span')
+            for (let i = 0; i < files.length; i++) {
+
+                // document.querySelector('P').innerHTML =
+                
+                output.innerHTML = (`文件名：${files[i].name}     
+                <br/>                              
+                时间戳：${files[i].lastModified}`);
+            }
+
+
+        }
+        showFile(window)
+    </script>
+</body>
+
+</html>
